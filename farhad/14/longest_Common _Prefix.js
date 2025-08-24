@@ -1,12 +1,24 @@
-// const longestCommonPrefix = (strs) => {
-//   let logestPrefix = "";
-//   for (let i = 0; i < strs.length; i++) {
-//     for (let j = 0; j < strs[i].length; j++) {
-//       //   if(strs[i][j] === strs[i]);
-//       console.log(strs[i][j]);
-//     }
-//   }
-// };
+const longestCommonPrefix = (strs) => {
+  let firstStr = strs[0];
+  let logestPrefix = "";
+  for (let i = 0; i < firstStr.length; i++) {
+    let flag = true;
+    for (let j = 0; j < strs.length; j++) {
+      if (strs[j][i] !== firstStr[i]) {
+        flag = false;
+        break;
+      }
+    }
 
-// const strs = ["flower", "flow", "flight"];
-// longestCommonPrefix(strs);
+    if (flag) {
+      logestPrefix += firstStr[i];
+    } else {
+      break;
+    }
+  }
+  return logestPrefix;
+};
+
+const strs = ["flower", "flow", "flight", "flower", "flight"];
+const res = longestCommonPrefix(strs);
+console.log(res);
