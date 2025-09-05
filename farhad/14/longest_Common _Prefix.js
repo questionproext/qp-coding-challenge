@@ -3,7 +3,7 @@ const longestCommonPrefix = (strs) => {
   let logestPrefix = "";
   for (let i = 0; i < firstStr.length; i++) {
     let flag = true;
-    for (let j = 0; j < strs.length; j++) {
+    for (let j = 1; j < strs.length; j++) {
       if (strs[j][i] !== firstStr[i]) {
         flag = false;
         break;
